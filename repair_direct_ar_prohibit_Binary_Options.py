@@ -565,5 +565,5 @@ def solve_and_write(graphpath,colorpath,rm_weight,add_weight,fname,rmip,rcons,\
     print(f"Found {minp} colors, minimal is {idealnum}")
 
     #return output file name and the number of partitions
-    return gname,idealnum,EdgesRemoved,EdgesAdded,sumremovals,sumadds,outfname,rmip,rcons,rvars,G_result,executionTime
+    return gname,idealnum,minp,EdgesRemoved,EdgesAdded,sumremovals,sumadds,outfname,rmip,rcons,rvars,G_result,executionTime
  
