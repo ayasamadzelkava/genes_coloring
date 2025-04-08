@@ -1,0 +1,37 @@
+##A samle file params.yaml file for the repair code
+## There must be a space between the : and the argument!!
+## by djp
+run_name: 570nodes
+## only binary currently implemented
+## weighted will be next
+edge_weight_type: binary
+## only Directed currently 
+edge_type: directed
+## only in balancing supported currently
+balance_type: In
+## this changes the balancing from hard to soft constraints
+## leave this as true in general
+hard_flag: True
+## David refers to the original constraints which are not necessarily
+## minimal balanced. Bryant are some constraints which cut out feasible 
+## solutions but rules out some feasible ones
+model_type: 'Bryant'
+## objective weight on adding an edge
+add_weight: 2
+## objective weight on removing an edge
+remove_weight: 1
+## both, add_only, or rm_only as strings
+rm_add_flag: "both"
+InDegOneFlag: True
+Return_NetworkX: True
+Save_Network_to_files: False    
+Save_output: True
+##key parameter to change
+##this is the optimality guarantee which 
+mip_gap: .1
+
+## mip history:
+## 0.05 -  seconds
+## 0.1 -  seconds
+## 0.2 -  seconds
+## 0.3 -   seconds
