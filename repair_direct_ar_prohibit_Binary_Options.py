@@ -5,7 +5,7 @@
 #find the minimum number of edges to add or remove
 #to ensure the coloring is inbalanced 
 import networkx as nx
-import graphs as gra
+from utils import graphs as gra
 import numpy as np
 import gurobipy as gp
 from gurobipy import GRB
@@ -341,7 +341,7 @@ def CreateRMIP(inputs,env,Imbalance,HardFlag,FixedEdges,FixedNonEdges,AddRemoveF
     return rmip,rcons,rvars,remove_edge,add_edge,node_balance_pos,node_balance_neg
 
 def set_rmip(graphpath,colorpath,Imbalance,HardFlag,\
-                 FixedEdges,FixedNonEdges,InDegOneFlag,AddRemoveFlag,prohibit):
+                 FixedEdges,FixedNonEdges,InDegOneFlag,AddRemoveFlag,prohibit,verbose):
     
     print("#######TIME TO SET UP#######\n")
     # Record the time before initializing the Gurobi environment
@@ -366,6 +366,7 @@ def set_rmip(graphpath,colorpath,Imbalance,HardFlag,\
     
     #initialize an environment
     env = gp.Env()
+    env.setParam('OutputFlag', 1 if verbose else 0)
     
     #create the model
     print("Creating model")
