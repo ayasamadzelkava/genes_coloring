@@ -101,7 +101,7 @@ def main():
             
         rmip.setParam("MIPGap",mip_gap)
 
-        _,idealnum,_,_,rem,add,_,_,_,_,gg,Solving_time = rep.solve_and_write(gpath,\
+        _,idealnum,_,_,_,rem,add,_,_,_,_,gg,Solving_time = rep.solve_and_write(gpath,\
                                         cpath,rm_weight,add_weight,outfile,rmip,B,C,D,E,F,G,H,I,\
                                         "Linear",HardFlag,[],[],InDegOneFlag,prohibit_path,\
                                         Save_info=Save_output,NetX=True)
